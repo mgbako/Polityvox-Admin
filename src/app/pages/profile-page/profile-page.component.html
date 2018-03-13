@@ -1,0 +1,89 @@
+
+<app-topbar></app-topbar>
+
+<!--===========app body start===========-->
+<div class="app-body">
+
+    <!--left sidebar start-->
+    <app-sidebar></app-sidebar>
+    <!--left sidebar end-->
+
+    <!--main contents start-->
+    <main class="main-content">
+
+        <!--profile heading start-->
+        <div class="bg-dark profile-img mb-4 text-light d-flex align-items-end">
+            <div class="container-fluid">
+                <div class="row mb-4 pt-5 pb-3 d-flex align-items-end">
+                    <div class="col-md-6">
+                        <div class="media mb-4">
+                            <img class="align-self-center mr-3 rounded-circle" src="assets/img/user3.png" alt="profile user" width="45px">
+                            <div class="media-body mt-1 profile-text-shadow">
+                                <strong class="f18">JONATHAN SMITH</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--profile heading end-->
+
+        <div class="container-fluid">
+            <!-- state start-->
+            <div class="row">
+                <div class=" col-md-8">
+                    <div class="card card-shadow">
+                        <div class="card-header">
+                            <div class="card-title">
+                                Recent Activities
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <!--profile timeline start-->
+                            <ul class="profile-timeline">
+                                <li>
+                                    <div class="profile-timeline-thumb">
+                                        <img src="assets/img/user2.png" alt="">
+                                    </div>
+                                    <div class="profile-timeline-thumb-desk">
+                                        <span>13 mins ago near Lagos, Nigeria</span>
+                                        <a href="#">Simi </a>
+                                        <div class=" mt-3">
+                                            Black Panther Ticket.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="profile-timeline-thumb">
+                                        <img src="assets/img/user1.png" alt="">
+                                    </div>
+                                    <div class="profile-timeline-thumb-desk">
+                                        <span>1 days ago, Lagos, Nigeria</span>
+                                        <a href="#">John</a>
+                                        <div class="mt-3">
+                                            Black Panther Ticket. with Popcorn.
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--profile timeline end-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- state end-->
+
+        </div>
+    </main>
+    <!--main contents end-->
+
+    <!--right sidebar start-->
+    <app-right-sidebar></app-right-sidebar>
+    <!--right sidebar end-->
+
+</div>
+<!--===========app body end===========-->
+<br>
+<app-footer></app-footer>
