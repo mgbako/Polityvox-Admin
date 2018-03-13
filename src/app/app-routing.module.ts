@@ -9,6 +9,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProcessPurchasePageComponent } from './pages/process-purchase-page/process-purchase-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { PromotionPageComponent } from './pages/promotion-page/promotion-page.component';
+import { AwardPointPageComponent } from './pages/award-point-page/award-point-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent, /* canActivate: [AuthGuard] */ },
   { path: 'process', component: ProcessPurchasePageComponent, /* canActivate: [AuthGuard] */ },
   { path: 'profile', component: ProfilePageComponent, /* canActivate: [AuthGuard] */ },
-  { path: 'promotion', component: PromotionPageComponent, /* canActivate: [AuthGuard] */ }
+  { path: 'promotion', component: PromotionPageComponent, /* canActivate: [AuthGuard] */ },
+  { path: 'award-point', component: AwardPointPageComponent, /* canActivate: [AuthGuard] */ }
 ];
 
 @NgModule({

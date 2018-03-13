@@ -15,11 +15,12 @@
             <div class="container-fluid p-0">
                 <div class="row">
                     <div class="col-8">
-                        <h4 class="mb-0"> Process Purchase
+                        <h4 class="mb-0"> Award Customer Point
+                            <!--<small>statistics, charts many more</small> -->
                         </h4>
                         <ol class="breadcrumb mb-0 pl-0 pt-1 pb-0">
                             <li class="breadcrumb-item"><a routerLInk="/home" class="default-color">Home</a></li>
-                            <li class="breadcrumb-item active">Process Purchase</li>
+                            <li class="breadcrumb-item active">Award Point</li>
                         </ol>
                     </div>
                     <div class="col-4">
@@ -62,15 +63,19 @@
                 <div class="card card-shadow">
                     <div class="card-header">
                         <div class="card-title">
-                            Verify Token
+                            Award Point
                         </div>
                     </div>
                     <div class="card-body">
                         <form #f="ngForm" (ngSubmit)="onSubmit(f)">
                             <div class="form-group">
-                                <label for="inputToke">Customer Token</label>
-                                <input type="text" class="form-control form-control-pill form-control-lg" id="inputToke" aria-describedby="tokenHelp" placeholder="Customer Token" ngModel name="token" required>
-                                <small id="tokenHelp" class="form-text text-muted">Token sent to the customer's phone</small>
+                                <label for="inputToke">Customer Phone Number</label>
+                                <input type="tel" class="form-control form-control-pill form-control-lg" id="inputToke" placeholder="Customer Phone Number" ngModel name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputPoint">Customer Point</label>
+                                <input type="number" class="form-control form-control-pill form-control-lg" id="inputPoint" placeholder="Customer Point" ngModel name="point" required>
                             </div>
 
                             <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>

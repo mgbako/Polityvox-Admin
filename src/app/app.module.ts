@@ -28,6 +28,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProcessPurchasePageComponent } from './pages/process-purchase-page/process-purchase-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { PromotionPageComponent } from './pages/promotion-page/promotion-page.component';
+import { AwardPointPageComponent } from './pages/award-point-page/award-point-page.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { PromotionPageComponent } from './pages/promotion-page/promotion-page.co
     HomePageComponent,
     ProcessPurchasePageComponent,
     ProfilePageComponent,
-    PromotionPageComponent
+    PromotionPageComponent,
+    AwardPointPageComponent
   ],
   imports: [
     BrowserModule,

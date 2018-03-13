@@ -15,8 +15,31 @@ export class CustomerService {
   verifyToke(token) {
     return this.http.get('tokens/' + token).pipe(
       map(res => res),
-      catchError(error => error)
+      catchError(this.handlerError)
     );
+  }
+
+  awardPoint(data) {
+    return this.http.post('customers/awardpoint', data).pipe(
+      map(res => res),
+      catchError(this.handlerError)
+    );
+  }
+
+  private handlerError(error: HttpErrorResponse) {
+    const errors = {
+      status: error.status,
+      message: error.error
+    };
+
+    if (error.error instanceof ErrorEvent) {
+      console.error('An error occurred', error.error.message);
+    } else {
+      console.error(`Backend returned code $(error.status)`);
+      return new ErrorObservable(errors);
+    }
+
+    return new ErrorObservable(errors);
   }
 
 }
