@@ -15,11 +15,11 @@ const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'home', component: HomePageComponent, /* canActivate: [AuthGuard] */ },
-  { path: 'process', component: ProcessPurchasePageComponent, /* canActivate: [AuthGuard] */ },
-  { path: 'profile', component: ProfilePageComponent, /* canActivate: [AuthGuard] */ },
-  { path: 'promotion', component: PromotionPageComponent, /* canActivate: [AuthGuard] */ },
-  { path: 'award-point', component: AwardPointPageComponent, /* canActivate: [AuthGuard] */ }
+  { path: 'home', component: HomePageComponent, canActivate: [AuthGuard] },
+  { path: 'process', component: ProcessPurchasePageComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard] },
+  { path: 'promotion', component: PromotionPageComponent, canActivate: [AuthGuard] },
+  { path: 'award-point', component: AwardPointPageComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

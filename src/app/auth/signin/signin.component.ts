@@ -31,7 +31,7 @@ export class SigninComponent implements OnInit {
     this.authService.login(data).subscribe(
       res => {
         this.spinnerService.hide();
-        this.alertService.success('Merchant Saved Successfully');
+        this.alertService.success(`Welcome ${res.email}`);
         console.log(res);
         this.authService.setUser(res);
         this.router.navigate(['/home']);
