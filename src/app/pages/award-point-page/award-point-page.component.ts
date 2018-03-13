@@ -21,8 +21,9 @@ export class AwardPointPageComponent implements OnInit {
 
   onSubmit(form: NgForm){
     this.spinnerService.show();
+    const phone = form.value.phone;
     const data = {
-      phone: form.value.phone,
+      phone: phone,
       point: form.value.point
     };
     console.log(form.value);
@@ -32,7 +33,7 @@ export class AwardPointPageComponent implements OnInit {
         this.reset(form);
         this.spinnerService.hide();
         if (res) {
-          this.alertService.success(`Point Awarded to ${form.value.phone}`);
+          this.alertService.success(`Point Awarded to ${phone}`);
           console.log(res);
           return;
         }
