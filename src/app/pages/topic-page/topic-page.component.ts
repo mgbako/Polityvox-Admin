@@ -4,16 +4,16 @@ import { NgForm, Validators } from '@angular/forms';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { AlertService } from '../../services/alert.service';
 
-import { CustomerService } from '../../services/customer.service';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
-  selector: 'app-process-purchase-page',
-  templateUrl: './process-purchase-page.component.html',
-  styleUrls: ['./process-purchase-page.component.scss']
+  selector: 'app-topic-page',
+  templateUrl: './topic-page.component.html',
+  styleUrls: ['./topic-page.component.scss']
 })
-export class ProcessPurchasePageComponent implements OnInit {
+export class TopicPageComponent implements OnInit {
 
-  constructor(private customerService: CustomerService,
+  constructor(private adminService: AdminService,
     private spinnerService: Ng4LoadingSpinnerService, private alertService: AlertService) { }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class ProcessPurchasePageComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.spinnerService.show();
     console.log(form.value.token);
-    this.customerService.verifyToke(form.value.token).subscribe(
+    this.adminService.newTopics(form.value.token, ).subscribe(
       res => {
         this.alertService.success('Token Verified');
         this.spinnerService.hide();

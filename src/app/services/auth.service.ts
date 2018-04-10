@@ -9,22 +9,22 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 export class AuthService {
   loggedIn = false;
 
-  constructor(private http: HttpService){
+  constructor(private http: HttpService) {
   }
 
   isAuthenticated() {
     return JSON.parse(localStorage.getItem('user'));
   }
 
-  register(data){
-    return this.http.post('merchants', data).pipe(
+  register(data) {
+    return this.http.post('register', data).pipe(
       map(res => res),
       catchError(this.handlerError)
     );
   }
 
   login(data) {
-    return this.http.post('merchants/login', data).pipe(
+    return this.http.post('login', data).pipe(
       map(res => {
         this.loggedIn = true;
         return res;
@@ -46,6 +46,11 @@ export class AuthService {
         reject();
       }
     });
+  }
+
+  loadToken() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user.token;
   }
 
   logout() {

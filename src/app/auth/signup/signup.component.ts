@@ -31,14 +31,16 @@ export class SignupComponent implements OnInit {
       'address': form.value.address,
       'password': form.value.password,
       'confirmPassword': form.value.confirmPassword,
-      'storeName': form.value.storeName,
+      'firstname': form.value.firstname,
+      'lastname': form.value.lastname,
+      'username': form.value.username,
       'phone': form.value.phone
     };
 
     if (data.password === data.confirmPassword) {
       this.authService.register(data).subscribe(
         res => {
-          this.alertService.success('Merchant Saved Successfully');
+          this.alertService.success('Account Created Successfully');
           this.spinnerService.hide();
 
           if (res) {

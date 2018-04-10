@@ -3,24 +3,30 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class HttpService {
-  private dynamicUrl = 'b51ea4e3';
-  private baseUrl = `https://mtn-loyalty.herokuapp.com/api/v1/`;
+  private baseUrl = `https://vox-backend.herokuapp.com/`;
+  headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
 
   constructor(public http: HttpClient) { }
 
-  get(url) {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-
-    return this.http.get(this.baseUrl + url);
+  get(url, token = null) {
+    if (token !== null) {
+      this.headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': token
+      });
+    }
+    return this.http.get(this.baseUrl + url, {headers: this.headers});
   }
 
-  post(url: string, data) {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-
-    return this.http.post(this.baseUrl + url, data, {headers: headers});
+  post(url: string, data, token = null) {
+    if (token !== null) {
+      this.headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': token
+      });
+    }
+    return this.http.post(this.baseUrl + url, data, {headers: this.headers});
   }
 }

@@ -6,14 +6,21 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 
 @Injectable()
-export class CustomerService {
-
+export class AdminService {
+  
   constructor(private http: HttpService) {
 
   }
 
-  verifyToke(token) {
-    return this.http.get('tokens/' + token).pipe(
+  topics() {
+    return this.http.get('topics').pipe(
+      map(res => res),
+      catchError(this.handlerError)
+    );
+  }
+
+  newTopics(data) {
+    return this.http.post('topics', data).pipe(
       map(res => res),
       catchError(this.handlerError)
     );

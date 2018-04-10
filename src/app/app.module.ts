@@ -12,7 +12,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthService } from './services/auth.service';
 import { HttpService } from './services/http.service';
 import { AuthGuard } from './auth-guard.service';
-import { CustomerService } from './services/customer.service';
+import { AdminService } from './services/admin.service';
 import { AlertService } from './services/alert.service';
 
 // Components
@@ -25,7 +25,7 @@ import { TopbarComponent } from './menu/topbar/topbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RightSidebarComponent } from './right-sidebar/right-sidebar.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { ProcessPurchasePageComponent } from './pages/process-purchase-page/process-purchase-page.component';
+import { TopicPageComponent } from './pages/topic-page/topic-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { PromotionPageComponent } from './pages/promotion-page/promotion-page.component';
 import { AwardPointPageComponent } from './pages/award-point-page/award-point-page.component';
@@ -40,7 +40,7 @@ import { AwardPointPageComponent } from './pages/award-point-page/award-point-pa
     FooterComponent,
     RightSidebarComponent,
     HomePageComponent,
-    ProcessPurchasePageComponent,
+    TopicPageComponent,
     ProfilePageComponent,
     PromotionPageComponent,
     AwardPointPageComponent
@@ -53,7 +53,7 @@ import { AwardPointPageComponent } from './pages/award-point-page/award-point-pa
     Ng4LoadingSpinnerModule.forRoot(),
     FlashMessagesModule.forRoot(),
   ],
-  providers: [AuthService, AuthGuard, HttpService, CustomerService, AlertService],
+  providers: [AuthService, AuthGuard, HttpService, AdminService, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

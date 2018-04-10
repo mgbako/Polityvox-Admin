@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { AlertService } from '../../services/alert.service';
 
-import { CustomerService } from '../../services/customer.service';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-award-point-page',
@@ -13,7 +13,7 @@ import { CustomerService } from '../../services/customer.service';
 })
 export class AwardPointPageComponent implements OnInit {
 
-  constructor(private customerService: CustomerService,
+  constructor(private adminService: AdminService,
     private spinnerService: Ng4LoadingSpinnerService, private alertService: AlertService) { }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class AwardPointPageComponent implements OnInit {
     };
     console.log(form.value);
 
-    this.customerService.awardPoint(data).subscribe(
+    this.adminService.awardPoint(data).subscribe(
       res => {
         this.reset(form);
         this.spinnerService.hide();
