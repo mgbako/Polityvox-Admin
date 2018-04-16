@@ -14,11 +14,10 @@ import { HttpService } from './services/http.service';
 import { AuthGuard } from './auth-guard.service';
 import { AdminService } from './services/admin.service';
 import { AlertService } from './services/alert.service';
+import { PostService } from './services/post.service';
 
 // Components
 import { AppComponent } from './app.component';
-import { SigninComponent } from './auth/signin/signin.component';
-import { SignupComponent } from './auth/signup/signup.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SidebarComponent } from './menu/sidebar/sidebar.component';
 import { TopbarComponent } from './menu/topbar/topbar.component';
@@ -26,24 +25,22 @@ import { FooterComponent } from './footer/footer.component';
 import { RightSidebarComponent } from './right-sidebar/right-sidebar.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { TopicPageComponent } from './pages/topic-page/topic-page.component';
-import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
-import { PromotionPageComponent } from './pages/promotion-page/promotion-page.component';
-import { AwardPointPageComponent } from './pages/award-point-page/award-point-page.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { AdminSigninComponent } from './auth/admin-signin/admin-signin.component';
+import { AdminSignupComponent } from './auth/admin-signup/admin-signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SigninComponent,
-    SignupComponent,
     SidebarComponent,
     TopbarComponent,
     FooterComponent,
     RightSidebarComponent,
     HomePageComponent,
     TopicPageComponent,
-    ProfilePageComponent,
-    PromotionPageComponent,
-    AwardPointPageComponent
+    AdminPageComponent,
+    AdminSigninComponent,
+    AdminSignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +50,7 @@ import { AwardPointPageComponent } from './pages/award-point-page/award-point-pa
     Ng4LoadingSpinnerModule.forRoot(),
     FlashMessagesModule.forRoot(),
   ],
-  providers: [AuthService, AuthGuard, HttpService, AdminService, AlertService],
+  providers: [AuthService, AuthGuard, HttpService, AdminService, AlertService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -42,7 +42,8 @@
                         <form #f="ngForm" (ngSubmit)="onSubmit(f)">
                             <div class="form-group">
                                 <label for="inputName">Name</label>
-                                <input type="text" class="form-control form-control-pill form-control-lg" id="inputName" aria-describedby="nameHelp" placeholder="Name" ngModel name="name" required>
+                                <input type="text" class="form-control form-control-pill form-control-lg" id="inputName" aria-describedby="nameHelp" 
+                                placeholder="Name" ngModel name="name" required>
                             </div>
 
                             <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
@@ -52,6 +53,37 @@
               </div>
             </div>
             <!--state widget end-->
+
+            <div class="row">
+                <div class=" col-md-12">
+                    <div class="card card-shadow mb-4">
+                        <div class="card-header">
+                            <div class="card-title">
+                                All Topics
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let topic of topics">
+                                    <td>{{ topic.name }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm  btn-danger" (click)="onEdit(topic)"><i class="icon-pencil "></i> </button>
+                                        <button type="button" class="btn btn-sm  btn-warning" (click)="onDelete(topic)"><i class="icon-trash"></i> </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </main>

@@ -50,11 +50,18 @@ export class AuthService {
 
   loadToken() {
     const user = JSON.parse(localStorage.getItem('user'));
-    return user.token;
+    return user.api_token ? 'Bearer ' + user.api_token : null;
   }
 
   logout() {
     localStorage.removeItem('user');
+  }
+
+  newadmin(data) {
+    return this.http.post('newadmin', data).pipe(
+      map(res => res),
+      catchError(this.handlerError)
+    );
   }
 
   private handlerError(error: HttpErrorResponse) {

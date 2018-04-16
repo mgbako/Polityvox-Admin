@@ -3,23 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from './auth-guard.service';
 
-import { SigninComponent } from './auth/signin/signin.component';
-import { SignupComponent } from './auth/signup/signup.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { TopicPageComponent } from './pages/topic-page/topic-page.component';
-import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
-import { PromotionPageComponent } from './pages/promotion-page/promotion-page.component';
-import { AwardPointPageComponent } from './pages/award-point-page/award-point-page.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { AdminSigninComponent } from './auth/admin-signin/admin-signin.component';
+import { AdminSignupComponent } from './auth/admin-signup/admin-signup.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
-  { path: 'signin', component: SigninComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'home', component: HomePageComponent, /* canActivate: [AuthGuard] */ },
-  { path: 'process', component: TopicPageComponent, /* canActivate: [AuthGuard] */ },
-  { path: 'profile', component: ProfilePageComponent, /* canActivate: [AuthGuard] */ },
-  { path: 'promotion', component: PromotionPageComponent, /* canActivate: [AuthGuard] */ },
-  { path: 'award-point', component: AwardPointPageComponent, /* canActivate: [AuthGuard] */ }
+  { path: 'signin', component: AdminSigninComponent },
+  { path: 'signup', component: AdminSignupComponent },
+  { path: 'admin', component: AdminPageComponent, children: [
+    { path: 'home', component: HomePageComponent, /* canActivate: [AuthGuard] */ },
+    { path: 'topics', component: TopicPageComponent, /* canActivate: [AuthGuard] */ },
+  ]}
 ];
 
 @NgModule({

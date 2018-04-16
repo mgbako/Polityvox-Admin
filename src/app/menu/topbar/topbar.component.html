@@ -32,17 +32,17 @@
                   <div class="media d-user">
                       <img class="align-self-center mr-3" src="assets/img/user.png" alt="John Doe">
                       <div class="media-body">
-                          <h5 class="mt-0 mb-0">John Doe</h5>
-                          <span>john@gmail.com</span>
+                          <h5 class="mt-0 mb-0">{{ user.firstname }} {{ user.lastname }}</h5>
+                          <span>{{ user.email}}</span>
                       </div>
                   </div>
               </div>
 
-              <a class="dropdown-item" href="#"><i class=" ti-user"></i> Profile</a>
+              <a class="dropdown-item hidden" href="#"><i class=" ti-user"></i> Profile</a>
   
-              <div class="dropdown-divider"></div>
+              <div class="dropdown-divider hidden"></div>
 
-              <a class="dropdown-item" href="#"><i class=" ti-unlock"></i> Logout</a>
+              <a class="dropdown-item" (click)="onLogout()"><i class=" ti-unlock"></i> Logout</a>
           </div>
       </li>
   
